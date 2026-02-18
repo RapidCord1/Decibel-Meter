@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decibel Meter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Live Decibel Meter</h1>
+      <p class="subtitle">Microphone-based sound level monitor with ear-safety warnings</p>
+    </header>
+
+    <section class="meter-card">
+      <div class="reading-row">
+        <div>
+          <p class="label">Current Level</p>
+          <p id="dbValue" class="db-value">0 <span>dB</span></p>
+        </div>
+        <div id="tierBadge" class="tier tier-green">Good for Ears</div>
+      </div>
+
+      <div class="bar-wrap" aria-label="Decibel level gauge">
+        <div id="meterBar" class="meter-bar"></div>
+      </div>
+
+      <div class="zones">
+        <div><span class="dot green"></span>Good (0 to 69 dB)</div>
+        <div><span class="dot yellow"></span>Caution (70 to 84 dB)</div>
+        <div><span class="dot red"></span>Risk (85+ dB)</div>
+      </div>
+
+      <p id="warningText" class="warning warning-safe">Safe listening zone.</p>
+    </section>
+
+    <section class="stats-card">
+      <h2>Session Stats</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <p class="label">Minimum</p>
+          <p id="minValue">-- dB</p>
+        </div>
+        <div class="stat">
+          <p class="label">Maximum</p>
+          <p id="maxValue">-- dB</p>
+        </div>
+        <div class="stat">
+          <p class="label">Average</p>
+          <p id="avgValue">-- dB</p>
+        </div>
+        <div class="stat">
+          <p class="label">Peak Hold</p>
+          <p id="peakValue">-- dB</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn" class="btn btn-start">Start</button>
+      <button id="stopBtn" class="btn btn-stop" disabled>Stop</button>
+      <button id="resetBtn" class="btn btn-reset">Reset Stats</button>
+    </section>
+
+    <section class="calibration-card">
+      <h2>Calibration</h2>
+      <div class="cal-grid">
+        <label>
+          Sensitivity
+          <input id="sensitivitySlider" type="range" min="1.2" max="3.0" step="0.05" value="2.05" />
+          <span id="sensitivityValue">2.05</span>
+        </label>
+        <label>
+          Offset
+          <input id="offsetSlider" type="range" min="-20" max="40" step="1" value="22" />
+          <span id="offsetValue">0 dB</span>
+        </label>
+        <label>
+          Smoothness
+          <input id="smoothnessSlider" type="range" min="8" max="30" step="1" value="18" />
+          <span id="smoothnessValue">18</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="details-card">
+      <h2>Important Details</h2>
+      <ul>
+        <li>Meter uses your microphone; browser permission is required.</li>
+        <li>Readings are estimated environmental dB, not certified lab measurements.</li>
+        <li>Long exposure above 85 dB can increase hearing risk.</li>
+        <li>Use calibration controls to match another reference meter on your device.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
