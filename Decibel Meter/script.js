@@ -4,6 +4,7 @@ const maxValueEl = document.getElementById("maxValue");
 const avgValueEl = document.getElementById("avgValue");
 const peakValueEl = document.getElementById("peakValue");
 const meterBarEl = document.getElementById("meterBar");
+
 const tierBadgeEl = document.getElementById("tierBadge");
 const warningTextEl = document.getElementById("warningText");
 
@@ -236,5 +237,6 @@ setupCalibrationControls();
 startBtn.addEventListener("click", startMeter);
 stopBtn.addEventListener("click", stopMeter);
 resetBtn.addEventListener("click", resetStats);
+
 
 
