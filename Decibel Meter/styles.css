@@ -1,3 +1,4 @@
+
 :root {
   --bg: #f5f7fb;
   --card: #ffffff;
@@ -200,7 +201,7 @@ header h1 {
 .details-card ul {
   margin: 10px 0 0;
   padding-left: 20px;
-  color: #314156;
+  color: #324157;
 }
 
 @media (max-width: 640px) {
@@ -209,3 +210,4 @@ header h1 {
     align-items: flex-start;
   }
 }
+
